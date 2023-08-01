@@ -25,10 +25,10 @@ streamlit.header("Fruityvice Fruit Advice!")
 
 # New API for Fruityvice
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-streamlit.text(fruityvice_response.json())
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
+#streamlit.text(fruityvice_response.json()) - remove the notnormalized view of the data
 
-# normalize data ?
+# normalize data ? = put it in the table LOL
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # displays the normalize data
 streamlit.dataframe(fruityvice_normalized)
